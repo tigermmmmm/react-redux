@@ -1,7 +1,9 @@
-import {ADD_NUMBER, SUB_NUMBER, DECREMENT, INCREMENT } from "./constants.js";
+import {ADD_NUMBER, SUB_NUMBER, DECREMENT, INCREMENT, CHANGE_BANNER, CHANGE_RECOMMEND} from "./constants.js";
 
 const initialState = {
-    counter: 0
+    counter: 0,
+    banners: [],
+    recommend: []
 }
 
 function reducer(state = initialState, action) {
@@ -14,6 +16,10 @@ function reducer(state = initialState, action) {
             return {...state, counter: state.counter - 1};
         case INCREMENT:
             return {...state, counter: state.counter + 1};
+        case CHANGE_BANNER:
+            return {...state, banners: action.banners};
+        case CHANGE_RECOMMEND:
+            return {...state, recommend: action.recommend};
         default:
             return state;
     }

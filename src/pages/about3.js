@@ -12,13 +12,31 @@ function About(props) {
                 <h2>当前计数： {counter}</h2>
                 <button onClick = {e => props.addAction(1)}>+1</button>
                 <button onClick = {e => props.addAction(5)}>+5</button>
+                <h1>banners</h1>
+                <ul>
+                    {
+                        props.banners.map((item, index) => {
+                            return <li key={item.acm}>{item.title}</li>
+                        })
+                    }
+                </ul>
+                <h1>recommends</h1>
+                <ul>
+                    {
+                        props.recommend.map((item, index) => {
+                            return <li key={item.acm}>{item.title}</li>
+                        })
+                    }
+                </ul>
             </div>
         );
 }
 
 const mapStateToProps = state => {
     return {
-        counter: state.counter
+        counter: state.counter,
+        banners: state.banners,
+        recommend: state.recommend
     }
 };
 const mapDispatchToProps = dispatch => {

@@ -1,9 +1,12 @@
 import React, { PureComponent } from 'react';
 // import {connect} from "../utils/connect";
 import {connect} from "react-redux";
-import {decAction, subAction} from "../store/actionCreators";
+import {decAction, subAction, getHomeMultidataAction} from "../store/actionCreators";
 
 class home extends PureComponent {
+    componentDidMount() {
+        this.props.getHomeMultidata();
+    }
     render() {
         const {counter} = this.props;
         return (
@@ -27,6 +30,9 @@ const mapDispatchToProps = dispatch => ({
     },
     subNumber(num) {
         dispatch(subAction(num))
+    },
+    getHomeMultidata() {
+        dispatch(getHomeMultidataAction);
     }
 })
 
