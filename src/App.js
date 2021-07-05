@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import Home from "./pages/home-4-redux-thunk使用";
+import Home from "./pages/home-5-redux-saga使用";
 import About from "./pages/about3";
 
 class App extends PureComponent {
